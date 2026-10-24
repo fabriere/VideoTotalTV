@@ -20,6 +20,10 @@ jobs:
           java-version: '17'
 
       - uses: gradle/actions/setup-gradle@v4
+        with:
+          # El wrapper que trae SmartTube no está en la lista de checksums
+          # que valida la acción; se usa el del repo tal cual (Gradle 7.5).
+          validate-wrappers: false
 
       - name: Preparar SDK y firma
         run: |
