@@ -130,7 +130,7 @@
   <string name="player_show_remaining_time">Vis resterende tid i kontrollinjen</string>
   <string name="player_show_ending_time">Vis sluttid i kontrollinjen</string>
   <string name="open_channel_uploads">Åbn kanaluploads</string>
-  <string name="app_exit_shortcut">Afslut SmartTube</string>
+  <string name="app_exit_shortcut">Afslut VideoTotal TV</string>
   <string name="app_exit_none">Afslut ikke</string>
   <string name="app_double_back_exit">Dobbelttryk på tilbage</string>
   <string name="app_single_back_exit">Enkelt tryk på tilbage</string>
@@ -256,7 +256,7 @@
   <string name="msg_done">Færdig</string>
   <string name="msg_applying">Anvender %s</string>
   <string name="settings_block">Indholdsblokering</string>
-  <string name="msg_restart_app">Genstart venligst SmartTube for at anvende indstillingerne</string>
+  <string name="msg_restart_app">Genstart venligst VideoTotal TV for at anvende indstillingerne</string>
   <string name="settings_ui_scale">UI-skala</string>
   <string name="device_disconnected">Enheden \"%s\" er blevet afbrudt</string>
   <string name="device_connected">Enheden \"%s\" er blevet tilsluttet</string>
@@ -310,7 +310,7 @@
   <string name="keyboard_auto_show">Vis tastatur automatisk</string>
   <string name="pin_unpin_playlist">Tilføj/fjern playliste fra sidepanelet</string>
   <string name="pin_unpin_channel">Tilføj/fjern kanal fra sidepanelet</string>
-  <string name="msg_player_error_source2">URL virker ikke, ellers er enhedens ur forkert.\nDette er normalt en fejl i SmartTube.</string>
+  <string name="msg_player_error_source2">URL virker ikke, ellers er enhedens ur forkert.\nDette er normalt en fejl i VideoTotal TV.</string>
   <string name="hide_upcoming">Skjul kommende fra Abonnementer</string>
   <string name="search_background_playback">Afspil i baggrunden, mens du søger/browser på en kanal</string>
   <string name="trending_row_name">Populært lige nu</string>
@@ -319,7 +319,7 @@
   <string name="player_seek_confirmation_pause">Med bekræftelse (pause, mens du spoler)</string>
   <string name="player_seek_confirmation_play">Med bekræftelse (afspil, mens du spoler)</string>
   <string name="hide_shorts_from_home">Skjul shorts fra Hjem</string>
-  <string name="finish_on_disconnect">Luk SmartTube efter at have afbrudt telefonen/tabletten</string>
+  <string name="finish_on_disconnect">Luk VideoTotal TV efter at have afbrudt telefonen/tabletten</string>
   <string name="update_error">Opdateringsfejl</string>
   <string name="hide_shorts_from_history">Skjul shorts fra Historik</string>
   <string name="disable_screensaver">Deaktiver pauseskærm</string>
@@ -371,11 +371,11 @@
   <string name="disable_stream_buffer">Deaktiver buffer på streams</string>
   <string name="enter_master_password">Indtast global adgangskode</string>
   <string name="enable_master_password">Aktivér global adgangskode</string>
-  <string name="enable_voice_search_desc">Den officielle app erstattes med en såkaldt \"bro\", som videresender globale søgeforespørgsler til SmartTube.</string>
-  <string name="select_channel_section">Åbn tilsvarende sektion, når SmartTube startes fra en sektion i Android TV-launcheren. </string>
-  <string name="msg_player_error_video_source">Video-URL virker ikke, ellers er enhedens ur forkert.\nDette er normalt en fejl i SmartTube.</string>
-  <string name="msg_player_error_audio_source">Lyd-URL virker ikke, ellers er enhedens ur forkert.\nDette er normalt en fejl i SmartTube.</string>
-  <string name="msg_player_error_subtitle_source">Undertekst-URL virker ikke, ellers er enhedens ur forkert.\nDette er normalt en fejl i SmartTube.</string>
+  <string name="enable_voice_search_desc">Den officielle app erstattes med en såkaldt \"bro\", som videresender globale søgeforespørgsler til VideoTotal TV.</string>
+  <string name="select_channel_section">Åbn tilsvarende sektion, når VideoTotal TV startes fra en sektion i Android TV-launcheren. </string>
+  <string name="msg_player_error_video_source">Video-URL virker ikke, ellers er enhedens ur forkert.\nDette er normalt en fejl i VideoTotal TV.</string>
+  <string name="msg_player_error_audio_source">Lyd-URL virker ikke, ellers er enhedens ur forkert.\nDette er normalt en fejl i VideoTotal TV.</string>
+  <string name="msg_player_error_subtitle_source">Undertekst-URL virker ikke, ellers er enhedens ur forkert.\nDette er normalt en fejl i VideoTotal TV.</string>
   <string name="description_not_found">Beskrivelse ikke fundet</string>
   <string name="proxy_port_hint">Proxyport</string>
   <string name="proxy_host_hint">Proxyvært eller IP</string>
@@ -423,7 +423,7 @@
   <string name="playback_notifications_fix">Deaktiver afspilningsnotifikationer</string>
   <string name="amlogic_fix_desc">Rettelse til fald i billedfrekvens på Amlogic-baserede enheder.</string>
   <string name="amlogic_fix">Rettelse til Amlogic 1080p\@60fps</string>
-  <string name="tunneled_video_playback_desc">Afspil videoer direkte til displayet uden, at SmartTube behandler den. Det giver bedre lyd- og billedsynkronisering samt jævnere afspilning. Bemærk: Pause fungerer muligvis ikke korrekt!</string>
+  <string name="tunneled_video_playback_desc">Afspil videoer direkte til displayet uden, at VideoTotal TV behandler den. Det giver bedre lyd- og billedsynkronisering samt jævnere afspilning. Bemærk: Pause fungerer muligvis ikke korrekt!</string>
   <string name="tunneled_video_playback">Tunnelet videoafspilning (kræver Android 5+)</string>
   <string name="master_volume">Global lydstyrke</string>
   <string name="action_video_info">Videobeskrivelse</string>
@@ -468,7 +468,7 @@
   <string name="lb_playback_controls_skip_next">Spring næste over</string>
   <string name="lb_playback_controls_skip_previous">Spring forrige over/spol tilbage til starten</string>
   <string name="alt_presets_behavior">Alternativ adfærd for forudindstillinger (begræns båndbredde) </string>
-  <string name="alt_presets_behavior_desc">SmartTube vil forsøge at opretholde båndbredden svarende til den valgte forudindstilling i stedet for at matche mellem opløsning, FPS og codec.</string>
+  <string name="alt_presets_behavior_desc">VideoTotal TV vil forsøge at opretholde båndbredden svarende til den valgte forudindstilling i stedet for at matche mellem opløsning, FPS og codec.</string>
   <string name="sleep_timer">Søvntimer (hvis fjernbetjeningen ikke bruges i én time)</string>
   <string name="sleep_timer_desc">Sæt afspilning på pause, hvis fjernbetjeningen ikke har været brugt i en time.</string>
   <string name="disable_vsync">Deaktiver VSync</string>
@@ -529,7 +529,7 @@
   <string name="subtitle_yellow_black">Gul på sort baggrund</string>
   <string name="player_pixel_ratio">Pixelforhold</string>
   <string name="color_scheme_dark_grey_monochrome">Mørkegrå (monokrom)</string>
-  <string name="disable_mic_permission">Deaktiver venligst mikrofonadgang for SmartTube for, at denne genkender kan fungere korrekt.</string>
+  <string name="disable_mic_permission">Deaktiver venligst mikrofonadgang for VideoTotal TV for, at denne genkender kan fungere korrekt.</string>
   <string name="repeat_mode_shuffle">Bland enhver playliste</string>
   <string name="chat_left">Venstre</string>
   <string name="chat_right">Højre</string>
@@ -546,7 +546,7 @@
   <string name="enter_settings_password">Indtast adgangskode til indstillinger</string>
   <string name="child_mode">Børnetilstand</string>
   <string name="child_mode_desc">I denne tilstand kan man ikke søge eller se foreslået indhold. Indstillinger er desuden beskyttet med en adgangskode.</string>
-  <string name="lost_setting_warning">SmartTube-indstillingerne bliver ændret. Sørg for, at du har sikkerhedskopieret indstillingerne.</string>
+  <string name="lost_setting_warning">VideoTotal TV-indstillingerne bliver ændret. Sørg for, at du har sikkerhedskopieret indstillingerne.</string>
   <string name="player_button_long_click">Langt tryk på denne knap for flere indstillinger</string>
   <string name="pause_history">Sæt historik på pause</string>
   <string name="resume_history">Genoptag historik</string>
@@ -661,10 +661,10 @@
   <string name="dearrow_not_submitted_thumbs">Miniaturebilledkilde (hvis der ikke er nogen DeArrow-indsendelse)</string>
   <string name="pitch_effect">Pitch-effekt</string>
   <string name="fullscreen_mode">Fuldskærmstilstand (uden systembjælker)</string>
-  <string name="player_only_mode">Vis kun afspilleren, hvis videoen åbnes uden for SmartTube</string>
+  <string name="player_only_mode">Vis kun afspilleren, hvis videoen åbnes uden for VideoTotal TV</string>
   <string name="pinned_channel_rows">Vis fastgjorte kanaler som rækker</string>
   <string name="prefer_ipv4">Foretræk IPv4 DNS</string>
-  <string name="prefer_ipv4_desc">Kan løse problemer, når SmartTube slet ikke virker.\nBemærk: Kan forårsage frysninger og nedbrud (især på Android 8-enheder eller Dune HD).</string>
+  <string name="prefer_ipv4_desc">Kan løse problemer, når VideoTotal TV slet ikke virker.\nBemærk: Kan forårsage frysninger og nedbrud (især på Android 8-enheder eller Dune HD).</string>
   <string name="long_press_for_settings">LANGT TRYK FOR INDSTILLINGER</string>
   <string name="device_specific_backup">Sikkerhedskopiering kun for denne enhed</string>
   <string name="local_backup">Lokal sikkerhedskopiering</string>
