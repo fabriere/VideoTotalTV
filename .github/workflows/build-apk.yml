@@ -42,7 +42,9 @@ jobs:
           ls -la "$RUNNER_TEMP/videototal-tv.jks"
 
       - name: Compilar (stable, release)
-        run: ./gradlew :smarttubetv:assembleStstableRelease --no-daemon --stacktrace
+        run: |
+          chmod +x gradlew
+          ./gradlew :smarttubetv:assembleStstableRelease --no-daemon --stacktrace
 
       - name: Reunir APKs
         run: |
