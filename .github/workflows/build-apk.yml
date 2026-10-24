@@ -1,0 +1,56 @@
+name: Build APK TV
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Preparar SDK y firma
+        run: |
+          set -e
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          [ -x "$SDKMANAGER" ] || SDKMANAGER="$(find "$ANDROID_HOME" -name sdkmanager -type f | head -1)"
+          yes | "$SDKMANAGER" --licenses > /dev/null 2>&1 || true
+          "$SDKMANAGER" "platforms;android-34" "build-tools;30.0.3" "platform-tools" > /dev/null
+
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > "$RUNNER_TEMP/videototal-tv.jks"
+          printf 'storeFile=%s\nstorePassword=%s\nkeyAlias=%s\nkeyPassword=%s\n' \
+            "$RUNNER_TEMP/videototal-tv.jks" \
+            "${{ secrets.KEYSTORE_PASSWORD }}" \
+            "${{ secrets.KEY_ALIAS }}" \
+            "${{ secrets.KEY_PASSWORD }}" > keystore.properties
+          ls -la "$RUNNER_TEMP/videototal-tv.jks"
+
+      - name: Compilar (stable, release)
+        run: ./gradlew :smarttubetv:assembleStstableRelease --no-daemon --stacktrace
+
+      - name: Reunir APKs
+        run: |
+          set -e
+          mkdir -p out
+          find smarttubetv/build/outputs/apk -name "*.apk" -exec cp {} out/ \;
+          ls -la out/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VideoTotalTV-apk
+          path: out/*.apk
+          if-no-files-found: error
