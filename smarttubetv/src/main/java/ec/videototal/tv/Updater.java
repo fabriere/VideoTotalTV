@@ -143,7 +143,8 @@ final class Updater {
 
         new Thread(() -> {
             try {
-                File carpeta = new File(activity.getExternalFilesDir(null), "updates");
+                // getCacheDir(): la libreria de actualizaciones ya expone cache-path "." 
+                File carpeta = new File(activity.getCacheDir(), "updates");
                 if (!carpeta.exists() && !carpeta.mkdirs()) {
                     throw new IllegalStateException("no se pudo crear la carpeta");
                 }
@@ -198,7 +199,7 @@ final class Updater {
     private static void instalar(Activity activity, File apk) {
         try {
             Uri uri = FileProvider.getUriForFile(activity,
-                    activity.getPackageName() + ".fileprovider", apk);
+                    activity.getPackageName() + ".update_provider", apk);
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setDataAndType(uri, "application/vnd.android.package-archive");
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_ACTIVITY_NEW_TASK);
