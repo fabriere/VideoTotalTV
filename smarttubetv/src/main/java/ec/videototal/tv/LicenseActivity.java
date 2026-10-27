@@ -38,13 +38,22 @@ public class LicenseActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         if (LicenseStore.hasAccess(this)) {
+            // Revalidación silenciosa: si el servidor retira el plan, la próxima
+            // apertura pedirá código. Si no hay red, se sigue con lo guardado.
+            new Thread(() -> LicenseApi.revalidate(getApplicationContext())).start();
             openApp();
             return;
         }
 
         setContentView(buildUi());
-        if (LicenseStore.isExpired(this)) {
-            status.setText("Tu licencia venció. Escribe un código nuevo.");
+        if (!LicenseStore.token(this).isEmpty()) {
+            // Hay una sesión guardada pero no da acceso: se dice por qué, para
+            // que soporte no tenga que adivinar.
+            if (LicenseStore.isExpired(this)) {
+                status.setText("Tu licencia venció. Escribe un código nuevo.");
+            } else {
+                status.setText("La licencia de este equipo no está activa. Escribe tu código.");
+            }
             status.setTextColor(0xFFFFB4A9);
         }
         Updater.checkAndPrompt(this, false);
@@ -149,9 +158,13 @@ public class LicenseActivity extends Activity {
                     return;
                 }
                 status.setTextColor(0xFFFFB4A9);
-                status.setText("bad_code".equals(result.error)
-                        ? "Ese código no es válido o ya se usó."
-                        : "No se pudo conectar. Revisa la conexión a internet del televisor.");
+                if ("ya_usado".equals(result.error)) {
+                    status.setText("Ese código ya se usó en otro equipo. Pide un código para este televisor.");
+                } else if ("bad_code".equals(result.error)) {
+                    status.setText("Ese código no es válido.");
+                } else {
+                    status.setText("No se pudo conectar. Revisa la conexión a internet del televisor.");
+                }
                 codeInput.requestFocus();
             });
         }).start();

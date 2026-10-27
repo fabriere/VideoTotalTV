@@ -61,7 +61,14 @@ final class LicenseApi {
             Result result = new Result();
             if (status < 200 || status >= 300) {
                 Log.w(TAG, "activate HTTP " + status + " " + text);
-                result.error = (status == 400 || status == 404 || status == 409) ? "bad_code" : "network";
+                if (text.contains("code_exhausted")) {
+                    // El código ya se usó en otro equipo (p. ej. el celular).
+                    result.error = "ya_usado";
+                } else if (status == 400 || status == 404) {
+                    result.error = "bad_code";
+                } else {
+                    result.error = "network";
+                }
                 return result;
             }
 
